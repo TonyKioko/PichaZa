@@ -5,10 +5,10 @@
 {{block.super}}
  <div class="container">
    {% for image in images %}
-   <div class="row">
-     <div class="col-md-3">{{ image.pic }}</div>
-     <img src="{{ image.pic.url }}">
-   </div>
+   <!-- <div class="row"> -->
+     <div class="col-md-3"><img src="{{ image.pic.url }}"></div>
+
+   <!-- </div> -->
    {% endfor %}
  </div>
 {% endblock %}
