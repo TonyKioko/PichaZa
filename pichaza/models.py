@@ -4,14 +4,14 @@ import datetime as dt
 
 # Create your models here.
 #
-# class Location(models.Model):
-#     location = models.CharField(max_length=20)
-#
-#     def save_location(self):
-#         self.save()
-#
-#     def delete_location(self):
-#         self.delete()
+class Location(models.Model):
+    location = models.CharField(max_length=20,blank=True)
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
 #
 #     @classmethod
 #     def search_by_location(cls, search_term):
@@ -25,7 +25,7 @@ class Image(models.Model):
     pic = models.ImageField(upload_to = 'pichazza/', default='NO IMAGE')
     description = models.TextField()
     upload_date = models.DateTimeField(auto_now_add=True)
-    # image_location = models.ForeignKey(Location)
+    image_location = models.ForeignKey(Location)
 
     def __str__(self):
         return self.name
