@@ -3,4 +3,12 @@
 
 {% block content %}
 {{block.super}}
+ <div class="container">
+   {% for image in images %}
+   <div class="row">
+     <div class="col-md-3">{{ image.pic }}</div>
+     <img src="{{ image.pic.url }}">
+   </div>
+   {% endfor %}
+ </div>
 {% endblock %}
