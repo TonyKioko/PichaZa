@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>PichaZa - {{title}}</title>
+  {% else %}
+    <title> PichaZa </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %}
+     PichaZa Loading ...
+     <h1> Welcome to the Moringa Tribune</h1>
+     <h1>Starting App</h1>
+
+    {%endblock%}
+</body>
+</html>
