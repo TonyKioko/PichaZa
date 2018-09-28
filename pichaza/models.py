@@ -25,6 +25,11 @@ class Location(models.Model):
         self.delete()
     def __str__(self):
         return self.location
+    @classmethod
+    def search_by_category(cls, search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images
+
 #     @classmethod
 #     def search_by_location(cls, search_term):
 #         images = cls.objects.filter(location__icontains=search_term)
