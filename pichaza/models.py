@@ -14,6 +14,10 @@ class Category(models.Model):
         self.delete()
     def __str__(self):
         return self.category
+    @classmethod
+    def search_by_category(cls, search_term):
+        images = cls.objects.filter(name__icontains=search_term)
+        return images
 
 class Location(models.Model):
     location = models.CharField(max_length=20,null=True)
@@ -23,12 +27,13 @@ class Location(models.Model):
 
     def delete_location(self):
         self.delete()
+    @classmethod
+    def get_location(cls, id):
+        locations = Location.objects.get(pk = id)
+        return locations
     def __str__(self):
         return self.location
-    @classmethod
-    def search_by_category(cls, search_term):
-        images = cls.objects.filter(name__icontains=search_term)
-        return images
+
 
 #     @classmethod
 #     def search_by_location(cls, search_term):
@@ -60,3 +65,11 @@ class Image(models.Model):
     def get_images(cls):
         images = Image.objects.all()
         return images
+    @classmethod
+    def search_by_category(cls,category):
+        images = Image.objects.filter(category__exact=category)
+        return images
+    @classmethod
+    def filter_by_location(cls,location):
+        images_location = cls.objects.filter(location__id=location)
+        return images_location
