@@ -34,14 +34,6 @@ class Location(models.Model):
     def __str__(self):
         return self.location
 
-
-#     @classmethod
-#     def search_by_location(cls, search_term):
-#         images = cls.objects.filter(location__icontains=search_term)
-#         return images
-#     def __str__(self):
-#             return self.location
-
 class Image(models.Model):
     name = models.CharField(max_length = 60)
     pic = models.ImageField(upload_to = 'pichazza/', default='NO IMAGE')
@@ -57,6 +49,10 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id= id).all()
+        return image
 
     def delete_image(self):
         self.delete()
