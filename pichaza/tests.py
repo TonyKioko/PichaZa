@@ -38,3 +38,22 @@ class LocationTestClass(TestCase):
         self.location.delete_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations) == 0)
+
+class ImageTestClass(TestCase):
+    def setUp(self):
+        self.image = Image(name='kitten',pic='imageurl',description='pet')
+
+    def test_image_instance(self):
+        self.assertTrue(isinstance(self.image, Image))
+
+    def test_save_method(self):
+        self.image.save_image()
+        images  = Image.objects.all()
+        self.assertTrue(len(images)>0)
+
+    def test_delete_image_method(self):
+        self.image.save_image()
+        images = Image.objects.all()
+        self.image.delete_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) == 0)
