@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 {{block.super}}
+{% block js%}
 <script>
     function shareLink() {
       var copyLink = document.getElementById("link");
@@ -8,15 +10,16 @@
       alert("Link Copied: " + copyLink.value);
     }
   </script>
+  {% endblock js%}
 <div class="product">
   <div class="left-img2"><img src="{{image.pic.url}}" alt="" /></div>
   <div class="right-content">
     <div class="content-arrow"></div>
     <div class="content-container">
-      <h2 style="font-family: 'Cabin Sketch', cursive;">{{photo.name|upper}}</h2>
+      <h2 style="font-family: 'Cabin Sketch', cursive;">{{image.name|upper}}</h2>
       <div class="bot-view">
         <div class="date" style="color:white; font-family: 'Concert One', cursive;">
-          {{image.upload_date}} / &nbsp<span class="under">{{image.location}}</span>
+          {{image.upload_date}} / &nbsp<span class="under">{{image.location.name}}</span>
         </div>
         <hr class="line" />
         <div class="info" style="font-family: 'Arima Madurai', cursive; color:white">
@@ -30,7 +33,7 @@
            <a onclick="shareLink()" class="btn btn-primary text-center btn-block" style="margin-top:4px;">Copy link</a>
               <!-- <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i> -->
   </a></div>
-            <p>{{image.category}}</p>
+            <p>{{image.category.name}}</p>
           </div>
         </div>
       </div>
