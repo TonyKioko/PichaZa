@@ -5,7 +5,7 @@ import datetime as dt
 # Create your models here.
 #
 class Category(models.Model):
-    category = models.CharField(max_length =20,null=True)
+    name = models.CharField(max_length =20,default='Travel')
 
     def save_category(self):
         self.save()
@@ -20,7 +20,7 @@ class Category(models.Model):
         return images
 
 class Location(models.Model):
-    location = models.CharField(max_length=20,null=True)
+    name = models.CharField(max_length=20,default="Nairobi")
 
     def save_location(self):
         self.save()
@@ -39,10 +39,8 @@ class Image(models.Model):
     pic = models.ImageField(upload_to = 'pichazza/', default='NO IMAGE')
     description = models.TextField()
     upload_date = models.DateTimeField(auto_now_add=True)
-    location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
-
-
+    location = models.ManyToManyField(Location)
+    category = models.ManyToManyField(Category)
 
     def __str__(self):
         return self.name
@@ -62,10 +60,10 @@ class Image(models.Model):
         images = Image.objects.all()
         return images
     @classmethod
-    def search_by_category(cls,category):
-        images = Image.objects.filter(category__exact=category)
-        return images
+    def search_by_category(cls,search_term):
+        images_in_category = cls.objects.filter(category__category__icontains=search_term)
+        return images_in_category
     @classmethod
-    def filter_by_location(cls,location):
-        images_location = cls.objects.filter(location__id=location)
+    def filter_by_location(cls,id):
+        images_location = Image.objects.filter(id=location.id)
         return images_location
