@@ -1,5 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-
+{{block.super}}
+<script>
+    function shareLink() {
+      var copyLink = document.getElementById("link");
+      copyLink.select();
+      document.execCommand("Copy");
+      alert("Link Copied: " + copyLink.value);
+    }
+  </script>
 <div class="product">
   <div class="left-img2"><img src="{{image.pic.url}}" alt="" /></div>
   <div class="right-content">
@@ -8,7 +16,7 @@
       <h2 style="font-family: 'Cabin Sketch', cursive;">{{photo.name|upper}}</h2>
       <div class="bot-view">
         <div class="date" style="color:white; font-family: 'Concert One', cursive;">
-          {{image.upload_date}} / &nbsp<span class="under">{{image.location.name}}</span>
+          {{image.upload_date}} / &nbsp<span class="under">{{image.location}}</span>
         </div>
         <hr class="line" />
         <div class="info" style="font-family: 'Arima Madurai', cursive; color:white">
@@ -18,9 +26,11 @@
           <hr class="line" />
           <div class="footer">
             <div id="buttons">
-              <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
+              <input class="form-control" type="text" value="https://loca/media/{{image.pic}}" id="link">
+           <a onclick="shareLink()" class="btn btn-primary text-center btn-block" style="margin-top:4px;">Copy link</a>
+              <!-- <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i> -->
   </a></div>
-            <p>{{image.category.name}}</p>
+            <p>{{image.category}}</p>
           </div>
         </div>
       </div>
