@@ -8,7 +8,7 @@
       <h2 style="font-family: 'Cabin Sketch', cursive;">{{photo.name|upper}}</h2>
       <div class="bot-view">
         <div class="date" style="color:white; font-family: 'Concert One', cursive;">
-          {{image.upload_date}} / &nbsp<span class="under">{{image.location}}</span>
+          {{image.upload_date}} / &nbsp<span class="under">{{image.location.name}}</span>
         </div>
         <hr class="line" />
         <div class="info" style="font-family: 'Arima Madurai', cursive; color:white">
@@ -20,7 +20,7 @@
             <div id="buttons">
               <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i>
   </a></div>
-            <p>{{image.category}}</p>
+            <p>{{image.category.name}}</p>
           </div>
         </div>
       </div>

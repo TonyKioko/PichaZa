@@ -13,48 +13,46 @@
 
     {% for image in images %}
         {% for location in image.location.all %}
-            {% if location.location == 'Nairobi' %}
-                <div id="nairobi" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <div class="panel panel-primary">
+            {% if location.name == 'Nairobi' %}
+                <div id="nairobi" class="col-md-3 tab-pane fade">
+                    <!-- <div class="panel panel-primary">
                         <div class="panel-body"> -->
                             <img src="{{image.pic.url}}" alt="{{imag.name}}">
-                        </div>
+                        <!-- </div>
 
-                    </div>
+                    </div> -->
                 </div>
 
-            {% elif location.place == 'Dubai' %}
+            {% elif location.name == 'Dubai' %}
             <div id="dubai" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <img src="{{img.image_url.url}}" alt="{{img.name}}">
-                        </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-default" style="margin-left:30%"><a href="/image/{{img.id}}">VIEW DETAILS</a></button>
-                        </div>
-                    </div>
+                    <!-- <div class="panel panel-primary"> -->
+                        <!-- <div class="panel-body"> -->
+                            <img src="{{image.pic.url}}" alt="{{image.name}}">
+                        <!-- </div> -->
+
+                    <!-- </div> -->
             </div>
 
-            {% elif location.place == 'Zanzibar' %}
+            {% elif location.name == 'Zanzibar' %}
             <div id="zanzibar" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <img src="{{img.pic.url}}" alt="{{img.name}}">
+                    <!-- <div class="panel panel-primary"> -->
+                        <!-- <div class="panel-body"> -->
+                            <img src="{{image.pic.url}}" alt="{{image.name}}">
+                        <!-- </div> -->
+                        <!-- <div class="panel-footer">
                         </div>
-                        <div class="panel-footer">
-                        </div>
-                    </div>
+                    </div> -->
             </div>
-            {% elif location.place == 'National Park' %}
+            {% elif location.name == 'National Park' %}
             <div id="park" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                          <img src="{{img.pic.url}}" alt="{{img.name}}">
+                    <!-- <div class="panel panel-primary"> -->
+                        <!-- <div class="panel-body"> -->
+                          <img src="{{image.pic.url}}" alt="{{image.name}}">
 
-                        </div>
+                        <!-- </div>
                         <div class="panel-footer">
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
             </div>
             {% endif %}
         {% endfor %}

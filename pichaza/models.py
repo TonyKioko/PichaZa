@@ -13,7 +13,7 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
     def __str__(self):
-        return self.category
+        return self.name
     @classmethod
     def search_by_category(cls, search_term):
         images = cls.objects.filter(name__icontains=search_term)
@@ -32,7 +32,7 @@ class Location(models.Model):
         locations = Location.objects.get(pk = id)
         return locations
     def __str__(self):
-        return self.location
+        return self.name
 
 class Image(models.Model):
     name = models.CharField(max_length = 60)
