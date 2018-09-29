@@ -1,6 +1,24 @@
 from django.test import TestCase
 from .models import *
 
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.category = Category(category='Food')
+
+    def test_category_instance(self):
+        self.assertTrue(isinstance(self.category, Category))
+
+    def test_save_category_method(self):
+        self.category.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
+
+    def test_delete_category_method(self):
+        self.category.save_category()
+        self.category.delete_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) == 0)
+
 class LocationTestClass(TestCase):
 
     # Set up method
