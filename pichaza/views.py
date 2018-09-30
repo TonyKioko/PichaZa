@@ -19,7 +19,7 @@ def search_results(request):
 
     if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category")
-        searc = Image.search_by_category(search_term)
+        images = Image.search_by_category(search_term)
         message = f"{search_term}"
         print(search_term)
 
@@ -30,7 +30,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         # context={"message":message}
-        return render(request, 'search.html',{"message":message})
+        return render(request, 'search.html')
 
 def filter(request):
 
