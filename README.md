@@ -28,6 +28,7 @@ coming soon
 
 * Python Django Framework
 * PostgreSQL - Database
+* Javascript
 * Bootstrap
 
 ## Test Driven Development
@@ -36,7 +37,6 @@ coming soon
 
 ## Known Bugs
 There are no known bugs.
-
 
 ### License
 This project is licensed under the MIT Open Source license,Copyright (c) 2018 [Tony Kioko](https://github.com/tonykioko/)
