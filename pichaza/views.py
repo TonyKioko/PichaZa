@@ -30,7 +30,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         # context={"message":message}
-        return render(request, 'search.html')
+        return render(request, 'search.html',{"message":message})
 
 def filter(request):
 
