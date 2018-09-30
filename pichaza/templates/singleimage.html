@@ -19,7 +19,9 @@
       <h2 style="font-family: 'Cabin Sketch', cursive;">{{image.name|upper}}</h2>
       <div class="bot-view">
         <div class="date" style="color:white; font-family: 'Concert One', cursive;">
-          {{image.upload_date}} / &nbsp<span class="under">{{image.location.name}}</span>
+          {% for locate in image.location.all%}
+          {{image.upload_date}} / &nbsp<span class="under">{{locate.name}}</span>
+          {% endfor %}
         </div>
         <hr class="line" />
         <div class="info" style="font-family: 'Arima Madurai', cursive; color:white">
@@ -33,7 +35,9 @@
            <a onclick="shareLink()" class="btn btn-primary text-center btn-block" style="margin-top:4px;">Copy link</a>
               <!-- <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i> -->
   </a></div>
-            <p>{{image.category.name}}</p>
+    {% for categ in image.category.all%}
+            <p>{{categ.name}}</p>
+    {% endfor %}
           </div>
         </div>
       </div>

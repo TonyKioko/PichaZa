@@ -4,18 +4,25 @@
 
   <div class="row">
     {% if images %}
-      <h2>Found {{ images|length }} of searched term {{message}} </h2>
+      <h2 class="text-center">Found {{ images|length }} Images of category {{message}} </h2>
+      <hr>
     {% else %}
       <h2> Found 0 images for the search term {{message}}</h2>
+      <hr>
     {% endif %}
 
   </div>
 
-  <div class="row">
+  <div class="container">
 
   <!-- {% if images %} -->
     {% for image in images %}
-    <div class="col-md-3"><img src="{{ image.pic.url }}"></div>
+
+    <a href="{% url 'singleimage' image.id %}">
+
+    <div class="col-md-3"><img src="{{ image.pic.url }}"></div
+
+    </a>
 
     {% endfor %}
   <!-- {% endif %} -->
