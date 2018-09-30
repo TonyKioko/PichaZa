@@ -28,7 +28,7 @@
                               <ul class="list-group list-group-flush">
                                       <p class="lis-group-item text-center">{{image.descripton}}</>
                                         {% for categ in image.category.all%}
-                                                <p class="list-group-item text-center">Category: {{categ.name}}</p>
+                                                <p class="list-group-item text-center">Category : {{categ.name}}</p>
                                         {% endfor %}
                                       {% for locate in image.location.all%}
                                               <p class="list-group-item text-center">Location : {{locate.name}}</p>

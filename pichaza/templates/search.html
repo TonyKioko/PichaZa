@@ -19,9 +19,7 @@
     {% for image in images %}
 
     <a href="{% url 'singleimage' image.id %}">
-
-    <div class="col-md-3"><img src="{{ image.pic.url }}"></div
-
+      <div class="col-md-4"><img src="{{ image.pic.url }}" class="img-responsive i-images"></div>
     </a>
 
     {% endfor %}
