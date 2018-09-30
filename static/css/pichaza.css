@@ -4,7 +4,7 @@
   margin:2%;
 }
 
-
+/*
 a:hover{
   decoration:none;
   color:#fff;
@@ -71,7 +71,7 @@ a:hover{
 /*********************/
 /**  Media Queries  **/
 /*********************/
-
+/*
 @media (max-width: 1100px) {
     .product{
     width: 500px;
@@ -134,3 +134,4 @@ a:hover{
   display: flex;
   justify-content: space-between;
 }
+*/

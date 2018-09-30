@@ -11,37 +11,42 @@
     }
   </script>
   {% endblock js%}
-<div class="product">
-  <div class="left-img2"><img src="{{image.pic.url}}" alt="" /></div>
-  <div class="right-content">
-    <div class="content-arrow"></div>
-    <div class="content-container">
-      <h2 style="font-family: 'Cabin Sketch', cursive;">{{image.name|upper}}</h2>
-      <div class="bot-view">
-        <div class="date" style="color:white; font-family: 'Concert One', cursive;">
-          {% for locate in image.location.all%}
-          {{image.upload_date}} / &nbsp<span class="under">{{locate.name}}</span>
-          {% endfor %}
-        </div>
-        <hr class="line" />
-        <div class="info" style="font-family: 'Arima Madurai', cursive; color:white">
-          <div>
-            <span>{{image.descripton}}</span>
-          </div>
-          <hr class="line" />
-          <div class="footer">
-            <div id="buttons">
-              <input class="form-control" type="text" value="https://loca/media/{{image.pic}}" id="link">
-           <a onclick="shareLink()" class="btn btn-primary text-center btn-block" style="margin-top:4px;">Copy link</a>
-              <!-- <a href="#" class="btn btn-default btn-block">Copy Image link  &nbsp<i class="glyphicon glyphicon-paperclip"></i> -->
-  </a></div>
-    {% for categ in image.category.all%}
-            <p>{{categ.name}}</p>
-    {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <div class="container align-items-center">
+    <div class="col-md" style="font-family: 'Crimson Text', serif;font-size:16px">
+              <div class="card" style="height:auto;width:60rem;margin:auto;">
+                  <div class="card-header">
+                    <br>
+                          <p class="list-group-item">{{image.name |title}}</p>
+                  </div>
+                  <a href="#" target="_blank">
+                      <img class="card-img-top m-b-4" id="article-img" src="{{image.pic.url}}"  style="height:260px;width:100%;">
+
+                  </a>
+                  <div class="card-body">
+                      <div class="card-text">
+                              <ul class="list-group list-group-flush">
+                                      <p class="lis-group-item text-center">{{image.descripton}}</>
+                                        {% for categ in image.category.all%}
+                                                <p class="list-group-item text-center">Category: {{categ.name}}</p>
+                                        {% endfor %}
+                                      {% for locate in image.location.all%}
+                                              <p class="list-group-item text-center">Location : {{locate.name}}</p>
+                                      {% endfor %}
+                                      <p class="list-group-item text-center">{{image.upload_date}}</p>
+                                      <p class="list-group-item text-center">
+                                        <input class="form-control" type="text" value="https://loca/media/{{image.pic}}" id="link">
+                                        <a onclick="shareLink()" class="btn btn-primary text-center btn-block" style="margin-top:4px;">Copy link</a>
+                                      </p>
+
+
+                              </ul>
+
+                      </div>
+
+                  </div>
+              </div>
   </div>
+
 
   {% endblock %}
