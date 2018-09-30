@@ -32,7 +32,7 @@ def search_results(request):
         # context={"message":message}
         return render(request, 'search.html',{"message":message})
 
-def filter(request):
+def location_filter(request):
 
     images = Image.get_images()
     locations = Location.objects.all()
