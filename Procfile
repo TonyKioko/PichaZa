@@ -1,1 +1,1 @@
-web: gunicorn terapixar.wsgi
+web: gunicorn gallerapp.wsgi
