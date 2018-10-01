@@ -2,7 +2,7 @@
 
 {% block content %}
 {{block.super}}
-<div class="container" style="margin-left:10%; margin-left:5%; margin-top:4%">
+<div class="container" style="margin-left:10%;margin-top:4%">
     <ul class="nav nav-tabs nav-justified">
         <li><a href="#nairobi" data-toggle='tab'>Nairobi</a></li>
         <li><a href="#dubai" data-toggle='tab'>Dubai</a></li>
@@ -14,57 +14,77 @@
     {% for image in images %}
         {% for location in image.location.all %}
             {% if location.name == 'Nairobi' %}
-                <div id="nairobi" class="col-md-3 tab-pane fade">
-                    <!-- <div class="panel panel-primary">
-                        <div class="panel-body"> -->
-                        <a href="{% url 'singleimage' image.id %}">
+                <div id="nairobi" class="col-md-4 tab-pane fade">
 
-                            <img src="{{image.pic.url}}" alt="{{imag.name}}">
+                        <!-- <a href="{% url 'singleimage' image.id %}">
+
+                            <img src="{{image.pic.url}}" alt="{{image.name}}">
+                          </a> -->
+                          <a href="{% url 'singleimage' image.id %}">
+                            <div class="img-cont">
+                              <img src="{{ image.pic.url }}" class="img-responsive i-images">
+                              <div class="overlay">
+                                <div class="text">{{image.name}}</div>
+                              </div>
+                            </div>
                           </a>
-                        <!-- </div>
 
-                    </div> -->
                 </div>
 
             {% elif location.name == 'Dubai' %}
-            <div id="dubai" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <!-- <div class="panel panel-primary"> -->
-                        <!-- <div class="panel-body"> -->
-                        <a href="{% url 'singleimage' image.id %}">
+            <div id="dubai" class="col-md-4 col-sm-12 tab-pane fade">
+              <a href="{% url 'singleimage' image.id %}">
+                <div class="img-cont">
+                  <img src="{{ image.pic.url }}" class="img-responsive i-images">
+                  <div class="overlay">
+                    <div class="text">{{image.name}}</div>
+                  </div>
+                </div>
+              </a>
+
+
+                        <!-- <a href="{% url 'singleimage' image.id %}">
 
                             <img src="{{image.pic.url}}" alt="{{image.name}}">
-                            </a>
-                        <!-- </div> -->
+                            </a> -->
 
-                    <!-- </div> -->
             </div>
 
             {% elif location.name == 'Zanzibar' %}
             <div id="zanzibar" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <!-- <div class="panel panel-primary"> -->
-                        <!-- <div class="panel-body"> -->
-                        <a href="{% url 'singleimage' image.id %}">
+              <a href="{% url 'singleimage' image.id %}">
+                <div class="img-cont">
+                  <img src="{{ image.pic.url }}" class="img-responsive i-images">
+                  <div class="overlay">
+                    <div class="text">{{image.name}}</div>
+                  </div>
+                </div>
+              </a>
+
+
+                        <!-- <a href="{% url 'singleimage' image.id %}">
 
                             <img src="{{image.pic.url}}" alt="{{image.name}}">
-                            <a>
-                        <!-- </div> -->
-                        <!-- <div class="panel-footer">
-                        </div>
-                    </div> -->
+                            <a> -->
+
             </div>
             {% elif location.name == 'National Park' %}
             <div id="park" class="col-lg-4 col-md-4 col-sm-12 tab-pane fade">
-                    <!-- <div class="panel panel-primary"> -->
-                        <!-- <div class="panel-body"> -->
-                        <a href="{% url 'singleimage' image.id %}">
+              <a href="{% url 'singleimage' image.id %}">
+                <div class="img-cont">
+                  <img src="{{ image.pic.url }}" class="img-responsive i-images">
+                  <div class="overlay">
+                    <div class="text">{{image.name}}</div>
+                  </div>
+                </div>
+              </a>
+
+                        <!-- <a href="{% url 'singleimage' image.id %}">
 
                           <img src="{{image.pic.url}}" alt="{{image.name}}">
-                          </a>
+                          </a> -->
 
-                        <!-- </div>
-                        <div class="panel-footer">
-                        </div> -->
-                    <!-- </div> -->
+
             </div>
             {% endif %}
         {% endfor %}

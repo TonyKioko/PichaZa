@@ -21,7 +21,6 @@ class CategoryTestClass(TestCase):
 
 class LocationTestClass(TestCase):
 
-    # Set up method
     def setUp(self):
         self.location= Location(name = 'Nairobi')
 
