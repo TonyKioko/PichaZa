@@ -1,4 +1,4 @@
-# PichaZa Gallery
+# Terapixar Gallery
 #### Image Gallery Application created on 30/09/2018
 #### Author: **Tony Kioko**
 ## Description
@@ -22,7 +22,7 @@ This is a social web application where users can view uploaded images, the date 
 * To run the app, type python manage.py runserver from your virtual environment on the terminal. In your favorite browser, open the link provided by the local host.
 
 ### Live Link ###
-https://terapixar.herokuapp.com/
+[Terapixar](https://terapixar.herokuapp.com/)
 
 ## Technologies used ##
 
