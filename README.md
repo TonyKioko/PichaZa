@@ -1,5 +1,5 @@
 # PichaZa Gallery
-#### Image Gallery Application created on 14/09/2018
+#### Image Gallery Application created on 30/09/2018
 #### Author: **Tony Kioko**
 ## Description
 This is a social web application where users can view uploaded images, the date and time  image was uploaded, its description and specific location where the image was taken.
