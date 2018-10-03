@@ -1,16 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 {{block.super}}
-{% block js%}
-<script>
-    function shareLink() {
-      var copyLink = document.getElementById("link");
-      copyLink.select();
-      document.execCommand("Copy");
-      alert("Link Copied: " + copyLink.value);
-    }
-  </script>
-  {% endblock js%}
 
   <div class="container align-items-center">
     <div class="col-md" style="font-family: 'Crimson Text', serif;font-size:16px">
@@ -47,6 +37,16 @@
                   </div>
               </div>
   </div>
+  {% block js%}
+  <script>
+      function shareLink() {
+        var copyLink = document.getElementById("link");
+        copyLink.select();
+        document.execCommand("Copy");
+        alert("Link Copied: " + copyLink.value);
+      }
+    </script>
+    {% endblock js%}
 
 
   {% endblock %}
