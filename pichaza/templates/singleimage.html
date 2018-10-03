@@ -41,8 +41,11 @@
   <script>
       function shareLink() {
         var copyLink = document.getElementById("link");
+        // select method to select the contents of the field
         copyLink.select();
+        // copy to clipboard
         document.execCommand("Copy");
+        alert after copy
         alert("Link Copied: " + copyLink.value);
       }
     </script>
